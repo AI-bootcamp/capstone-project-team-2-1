@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <h1 id="title">الرسائل</h1>
+            <div class="controls">
+                <button id="language-toggle" onclick="toggleLanguage()">
+                    <i class="fas fa-language"></i> <span id="language-icon">🌐</span>
+                </button>
+                <button id="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i> <span id="theme-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Category Cards -->
+        <div id="category-cards" class="cards-container"></div>
+
+        <!-- Messages Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h2 id="sidebar-title">Messages</h2>
+                <button id="close-sidebar" onclick="closeSidebar()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="messages-container" class="messages-container"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
