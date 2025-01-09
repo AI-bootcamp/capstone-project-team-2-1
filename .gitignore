@@ -1,0 +1,6 @@
+# Ignore results folder
+NoteBook/results/
+
+# Ignore Data and Models directories
+Data/
+Models/

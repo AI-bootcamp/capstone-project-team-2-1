@@ -1,0 +1,538 @@
+:root {
+  --primary-color: #1e3a8a; /* Deep, elegant blue for primary accents */
+  --secondary-color: #3a5a9a; /* Much lighter than primary for a clear gradient */
+  --accent-color: #3b82f6; /* Bright blue for highlights and accents */
+  --background-light: #e2e8f0; /* Soft light gray-blue for light mode */
+  --background-dark: #0f172a; /* Deep navy blue for dark mode */
+  --text-light: #0f172a; /* Dark navy for text in light mode */
+  --text-dark: #f1f5f9; /* Light grayish-blue for text in dark mode */
+  --shadow: 0 4px 10px rgba(30, 58, 138, 0.4); /* Refined, deep blue shadow */
+  --neumorphic-shadow: 8px 8px 16px rgba(14, 32, 85, 0.4), -8px -8px 16px rgba(40, 74, 166, 0.3); /* Neumorphic blue tones */
+  --border-radius: 12px; /* Subtle modern rounding */
+  --transition: all 0.3s ease-in-out; /* Smooth, polished transitions */
+  --glass-background: rgba(30, 58, 138, 0.15); /* Lightly frosted blue glass */
+  --glass-border: rgba(30, 58, 138, 0.25); /* Subtle blue-tinted glass border */
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+  transition: var(--transition);
+}
+
+body[data-theme="dark"] {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--background-light);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+body[data-theme="dark"]::-webkit-scrollbar-track {
+  background: var(--background-dark);
+}
+
+/* Header Styles */
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  height: 50px;
+  width: auto;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+header .logo:hover {
+  transform: scale(1.05);
+}
+
+header h1 {
+  font-size: 1.75rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+header nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+header #theme-toggle {
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header #theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neumorphic-shadow);
+}
+
+/* Main Content Styles */
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Cards Container - Ultra-Modern Design */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: white; /* Solid white background for light mode */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border for definition */
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  transition: var(--transition);
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow); /* Soft shadow for depth */
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  transform: rotate(45deg);
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.card:hover::before {
+  top: 0;
+  left: 0;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card h3 i {
+  font-size: 1.75rem;
+  color: var(--accent-color); /* Accent color for icons */
+}
+
+.card p {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Dark Mode Adjustments */
+body[data-theme="dark"] .card {
+  background: linear-gradient(135deg, var(--glass-background), rgba(255, 255, 255, 0.2));
+  border: 1px solid var(--glass-border);
+}
+
+body[data-theme="dark"] .card p {
+  color: var(--text-dark);
+}
+
+/* Messages Container */
+.messages-container {
+  margin-top: 1.5rem;
+}
+
+.message {
+  background: var(--glass-background);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.message:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--neumorphic-shadow);
+}
+
+.message.important {
+  background: rgba(255, 193, 7, 0.1); /* Highlight important messages */
+  border-color: rgba(255, 193, 7, 0.2);
+}
+
+/* Filters Section */
+.filters {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.filter-form label {
+  font-weight: 600;
+}
+
+.filter-form select {
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.filter-form select:hover {
+  border-color: var(--primary-color);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--glass-background);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: var(--neumorphic-shadow);
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.close-modal:hover {
+  color: var(--accent-color);
+}
+
+.modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Dates Page Styles */
+.dates-container {
+  margin-bottom: 2rem;
+}
+
+.dates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.date-card {
+  background: linear-gradient(135deg, var(--glass-background), rgba(255, 255, 255, 0.2));
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  transition: var(--transition);
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.date-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  transform: rotate(45deg);
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.date-card:hover::before {
+  top: 0;
+  left: 0;
+}
+
+.date-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.date-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.date-icon {
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  background: rgba(99, 102, 241, 0.1);
+  padding: 0.75rem;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.date-icon:hover {
+  transform: rotate(15deg);
+}
+
+.date-content p {
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+body[data-theme="dark"] .date-content p {
+  color: var(--text-dark);
+}
+
+/* Highlighted Date Card */
+.date-card.highlighted {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+}
+
+.date-card.highlighted .date-icon {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.date-card.highlighted .date-content p {
+  color: white;
+}
+
+/* Charts Section - Ultra-Modern Design */
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.chart-container {
+  background: linear-gradient(135deg, var(--glass-background), rgba(255, 255, 255, 0.2));
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  transition: var(--transition);
+  overflow: hidden;
+  position: relative;
+}
+
+.chart-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  transform: rotate(45deg);
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.chart-container:hover::before {
+  top: 0;
+  left: 0;
+}
+
+.chart-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.chart-container h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Chart Canvas (for dynamic charts) */
+.chart-container canvas {
+  width: 100% !important;
+  height: 300px !important;
+  max-height: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Legend and Labels */
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.chart-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chart-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.chart-legend-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+body[data-theme="dark"] .chart-legend-label {
+  color: var(--text-dark);
+}
+
+/* Tooltip Styling */
+.chart-tooltip {
+  background-color: var(--background-dark) !important;
+  color: var(--text-dark) !important;
+  border-radius: var(--border-radius) !important;
+  padding: 0.5rem 1rem !important;
+  box-shadow: var(--shadow) !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 0.9rem !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .cards-container, .dates-grid, .charts {
+    grid-template-columns: 1fr;
+  }
+
+  .card, .date-card, .chart-container {
+    padding: 1rem;
+  }
+
+  .card h3, .chart-container h3 {
+    font-size: 1.25rem;
+  }
+
+  .chart-legend {
+    gap: 0.75rem;
+  }
+
+  .chart-legend-label {
+    font-size: 0.8rem;
+  }
+}
+
+.message-counter {
+  font-size: 0.875rem; /* Smaller font size */
+  color: var(--text-light); /* Use the same text color as the theme */
+  margin-top: 0.5rem;
+  opacity: 0.8; /* Slightly transparent */
+  transition: opacity 0.3s ease; /* Smooth fade-in animation */
+}
+
+body[data-theme="dark"] .message-counter {
+  color: var(--text-dark); /* Adjust for dark mode */
+}

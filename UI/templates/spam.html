@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>الرسائل المزعجة</h2>
+
+<!-- Spam Messages Grid -->
+<div class="cards-container">
+    {% for message in spam_messages %}
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-exclamation-circle spam-icon"></i> <!-- Spam icon -->
+            <span class="sender-name">{{ message['Sender'] }}</span> <!-- Sender name -->
+            <button class="delete-button" onclick="deleteMessage('{{ message['id'] }}')">
+                <i class="fas fa-trash"></i> <!-- Delete icon -->
+            </button>
+        </div>
+        <div class="card-content">
+            <p><strong>المحتوى:</strong> {{ message['Message Content'] }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+# Core Libraries
+pandas
+scikit-learn
+
+# Hugging Face Libraries
+git+https://github.com/huggingface/transformers.git
+datasets
+accelerate
+
+# PyTorch (for GPU support, replace 'cu118' with your CUDA version if needed)
+torch
+torchvision
+torchaudio
+--index-url https://download.pytorch.org/whl/cu118
+
+# Optional Libraries (for better performance)
+flash-attn
+
+# Flask (for web applications)
+flask
+
