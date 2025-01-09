@@ -15,7 +15,7 @@ Managing SMS messages effectively can be daunting due to their unstructured natu
 ---
 #### **Solution**
 <div align="center">
-  <img src="https://github.com/AI-bootcamp/capstone-project-team-2-1/blob/main/Images/msgai.png" alt="MsgAI Logo" width="400" height="auto" />
+  <img src="https://github.com/AI-bootcamp/capstone-project-team-2-1/blob/main/Images/msgai1.png" alt="MsgAI Logo" width="400" height="auto" />
 </div>
 
 💡 **MsgAI** revolutionizes SMS management with a powerful AI-driven platform that intelligently categorizes messages, extracts actionable data, and integrates financial analysis and scheduling tools. By leveraging cutting-edge machine learning and natural language processing, MsgAI ensures seamless organization and insight generation.
