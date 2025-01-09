@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>الرسائل</h2>
+
+<!-- Filter Dropdown -->
+<div class="filters">
+    <div class="filter-form">
+        <label for="importance-filter">عرض:</label>
+        <select id="importance-filter">
+            <option value="all">الكل📄</option>
+            <option value="important">الرسائل المهمة فقط❗</option>
+        </select>
+    </div>
+</div>
+
+<!-- Cards Container -->
+<div class="cards-container">
+    {% set sorted_categories = messages|groupby('Predicted Category')|sort(attribute='grouper', reverse=true) %}
+    {% for category, group in sorted_categories %}
+    <div class="card">
+        <h3>
+            {% if category == "الحكومة" %}
+                <i class="fas fa-landmark"></i> <!-- Icon for الحكومة -->
+            {% elif category == "التعليم" %}
+                <i class="fas fa-graduation-cap"></i> <!-- Icon for التعليم -->
+            {% elif category == "المالية" %}
+                <i class="fas fa-coins"></i> <!-- Icon for المالية -->
+            {% elif category == "الصحة" %}
+                <i class="fas fa-heartbeat"></i> <!-- Icon for الصحة -->
+            {% elif category == "أخرى" %}
+                <i class="fas fa-question-circle"></i> <!-- Icon for أخرى -->
+            {% elif category == "العروض" %}
+                <i class="fas fa-tags"></i> <!-- Icon for العروض -->
+            {% elif category == "الخدمات أو المتاجر" %}
+                <i class="fas fa-store"></i> <!-- Icon for الخدمات أو المتاجر -->
+            {% elif category == "الاتصالات" %}
+                <i class="fas fa-phone-alt"></i> <!-- Icon for الاتصالات -->
+            {% elif category == "السفر" %}
+                <i class="fas fa-plane"></i> <!-- Icon for السفر -->
+            {% endif %}
+            {{ category }}
+        </h3>
+        <div class="messages-container" style="display: none;">
+            {% for message in group %}
+            <div class="message {% if message['is_important'] %}important{% else %}not-important{% endif %}">
+                <p><strong>المرسل:</strong> {{ message['Sender'] }}</p>
+                <p><strong>المحتوى:</strong> {{ message['Message Content'] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Modal -->
+<div id="message-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 id="modal-category"></h2>
+        <div id="modal-messages" class="modal-body"></div>
+    </div>
+</div>
+{% endblock %}

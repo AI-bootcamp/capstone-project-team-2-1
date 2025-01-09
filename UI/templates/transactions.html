@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>المعاملات</h2>
+
+<!-- Filters Section -->
+<div class="filters">
+    <form method="GET" action="{{ url_for('transactions') }}" class="filter-form">
+        <label for="time_period">اختر الفترة الزمنية:</label>
+        <select name="time_period" id="time_period" onchange="this.form.submit()">
+            <option value="last_day" {% if time_period == 'last_day' %}selected{% endif %}>آخر يوم</option>
+            <option value="last_week" {% if time_period == 'last_week' %}selected{% endif %}>آخر أسبوع</option>
+            <option value="last_month" {% if time_period == 'last_month' %}selected{% endif %}>آخر شهر</option>
+        </select>
+    </form>
+
+    <form method="GET" action="{{ url_for('transactions') }}" class="filter-form">
+        <label for="unique_sender">اختر المرسل (المالية):</label>
+        <select name="unique_sender" id="unique_sender" onchange="this.form.submit()">
+            <option value="">الكل</option>
+            {% for sender in unique_senders %}
+                <option value="{{ sender }}" {% if selected_sender == sender %}selected{% endif %}>{{ sender }}</option>
+            {% endfor %}
+        </select>
+    </form>
+</div>
+
+<!-- Analysis Section -->
+<div class="analysis">
+    <h3>تحليل المعاملات</h3>
+    <div class="analysis-content">
+        {{ analysis_text|safe }}
+    </div>
+</div>
+
+<!-- Charts Section -->
+<div class="charts">
+    <div class="chart-container">
+        {{ bar_fig|safe }}
+    </div>
+    <div class="chart-container">
+        {{ pie_fig|safe }}
+    </div>
+</div>
+{% endblock %}
