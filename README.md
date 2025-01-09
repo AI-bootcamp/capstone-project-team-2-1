@@ -141,7 +141,7 @@ MsgAI categorizes incoming messages into the following groups:
 | Najla   |
 | Mana    |
 | Ibrahem |
-| Naife   |
+| Naif   |
 
 ---
 
