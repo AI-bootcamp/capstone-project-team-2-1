@@ -1,22 +1,20 @@
 ### MsgAI - Advanced SMS Classification and Insight Tool 🌐
 
+![Build Status](https://img.shields.io/badge/Build-Stable-brightgreen)
+![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Documentation](https://img.shields.io/badge/Docs-Available-blue)
 
-
-
-
-
-
-
+![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformer-yellow)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.2-orange)
 
 #### **Problem Statement**
 
-🚫 Managing SMS messages effectively can be daunting due to their unstructured nature. Important information may be lost amidst spam, financial transactions can go untracked, and event organization becomes inefficient. This lack of structure creates significant challenges for users seeking to derive actionable insights.
+Managing SMS messages effectively can be daunting due to their unstructured nature. Important information may be lost amidst spam, financial transactions can go untracked, and event organization becomes inefficient. This lack of structure creates significant challenges for users seeking to derive actionable insights.
 
 ---
 
 #### **Solution**
-
-
 
 💡 **MsgAI** revolutionizes SMS management with a powerful AI-driven platform that intelligently categorizes messages, extracts actionable data, and integrates financial analysis and scheduling tools. By leveraging cutting-edge machine learning and natural language processing, MsgAI ensures seamless organization and insight generation.
 
@@ -121,11 +119,8 @@ MsgAI categorizes incoming messages into the following groups:
     ├── static
     │   ├── css
     │   │   └── styles.css
-    │   ├── images
+    │   ├── image
     │   │   ├── msgai.png
-    │   │   ├── home.png
-    │   │   ├── transaction.png
-    │   │   └── dates.png
     │   └── js
     │       └── scripts.js
     └── templates
@@ -146,8 +141,6 @@ MsgAI categorizes incoming messages into the following groups:
 | Mana    |
 | Ibrahem |
 | Naife   |
-|   |
-| - |
 
 ---
 
@@ -155,15 +148,15 @@ MsgAI categorizes incoming messages into the following groups:
 
 ##### **1. Homepage 🏠**
 
-
-
 Showcases MsgAI’s features through a modern, intuitive interface.
+
+![Homepage](https://raw.githubusercontent.com/AI-bootcamp/capstone-project-team-2-1.git/main/Images/home.png)
 
 - Highlights classification insights.
 - Displays financial trends and analysis.
 - Quick access to event schedules.
 
-##### **2. Spam and Importance Management (messages.html) 📬**
+##### **2. Spam and Importance Management (messages.html) 📮**
 
 Organizes messages into spam and important categories.
 
@@ -172,18 +165,18 @@ Organizes messages into spam and important categories.
 
 ##### **3. Financial Transactions (transactions.html) 💸**
 
-
-
 Provides detailed financial insights without requiring ML models.
+
+![Transaction Analysis](https://raw.githubusercontent.com/AI-bootcamp/capstone-project-team-2-1.git/main/Images/transaction.png)
 
 - Automatically categorizes transactions into income and expenditure.
 - Visualizes financial trends and patterns.
 
 ##### **4. Calendar & Event Management (dates.html) 🗓**
 
-
-
 Simplifies event organization by extracting dates from messages.
+
+![Date and Schedule Management](https://raw.githubusercontent.com/AI-bootcamp/capstone-project-team-2-1.git/main/Images/dates.png)
 
 - Enables reminder creation for key events.
 - Tracks historical and upcoming schedules effectively.
@@ -234,7 +227,4 @@ A reusable, responsive framework ensures:
 
 1. **🚀 Real-time SMS Processing:** Enable live processing through advanced APIs.
 2. **📱 Mobile App:** Develop a mobile-first application for enhanced accessibility.
-
----
-
 
