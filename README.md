@@ -15,7 +15,7 @@ Managing SMS messages effectively can be daunting due to their unstructured natu
 ---
 
 #### **Solution**
-![MsgAI](https://github.com/AI-bootcamp/capstone-project-team-2-1/blob/main/Images/msgai.png)
+<img src="https://github.com/AI-bootcamp/capstone-project-team-2-1/blob/main/Images/msgai.png" alt="MsgAI Logo" width="200" height="auto" />
 💡 **MsgAI** revolutionizes SMS management with a powerful AI-driven platform that intelligently categorizes messages, extracts actionable data, and integrates financial analysis and scheduling tools. By leveraging cutting-edge machine learning and natural language processing, MsgAI ensures seamless organization and insight generation.
 
 ---
@@ -167,7 +167,7 @@ Organizes messages into spam and important categories.
 
 Provides detailed financial insights without requiring ML models.
 
-![Transaction Analysis](https://github.com/AI-bootcamp/capstone-project-team-2-1/blob/main/Images/transaction.png)
+![Transaction Analysis](https://github.com/AI-bootcamp/capstone-project-team-2-1/blob/main/Images/transcation.png)
 
 - Automatically categorizes transactions into income and expenditure.
 - Visualizes financial trends and patterns.
